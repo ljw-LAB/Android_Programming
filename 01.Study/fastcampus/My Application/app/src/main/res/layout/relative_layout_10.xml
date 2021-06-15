@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:background="#3F51B5" />
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="#9C27B0" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#009688" />
+
+    <!-- RelativeLayout 는 framework 보다 계산량이 많아 연산양이 많다 framework 사용 권장
+        단 요즘은 스마트폰 고사양으로 인해 그다지 차이 없음-->
+
+
+</RelativeLayout>
