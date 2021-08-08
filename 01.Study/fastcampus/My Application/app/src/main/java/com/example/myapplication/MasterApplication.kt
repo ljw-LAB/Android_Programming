@@ -1,56 +1,53 @@
 package com.example.myapplication
 
 import android.app.Application
-import android.app.Service
 import android.content.Context
 import com.facebook.stetho.Stetho
 import com.facebook.stetho.okhttp3.StethoInterceptor
-import okhttp3.Connection
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class MasterApplication :Application()
-{
-    lateinit var service : RetrofitService
+
+class MasterApplication : Application() {
+
+    lateinit var service: RetrofitService
 
     override fun onCreate() {
         super.onCreate()
+
         Stetho.initializeWithDefaults(this)
         createRetrofit()
         //chrome://inspect/#devices
     }
 
-    fun createRetrofit()
-    {
-        val header = Interceptor{
+
+    fun createRetrofit() {
+        val header = Interceptor {
             val original = it.request()
-
-            if(checkIsLogin())
-            {
-                getUserToken()?.let {token->
-                    val request = original.newBuilder().header("Authorization", "token " + token).build()
-                    it.proceed(request)
+            if (checkIsLogin()) {
+                getUserToken()?.let { token ->
+                    val requeset = original.newBuilder()
+                        .header("Authorization", "token " + token)
+                        .build()
+                    it.proceed(requeset)
                 }
-
-            }
-            else
-            {
+            } else {
                 it.proceed(original)
             }
         }
 
         val client = OkHttpClient.Builder()
-                .addInterceptor(header)
-                .addNetworkInterceptor(StethoInterceptor())
-                .build()
+            .addInterceptor(header)
+            .addNetworkInterceptor(StethoInterceptor())
+            .build()
 
         val retrofit = Retrofit.Builder()
-                .baseUrl("http://mellowcode.org/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .client(client)
-                .build()
+            .baseUrl("http://mellowcode.org/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(client)
+            .build()
 
         service = retrofit.create(RetrofitService::class.java)
     }
@@ -68,4 +65,6 @@ class MasterApplication :Application()
         if (token == "null") return null
         else return token
     }
+
+
 }

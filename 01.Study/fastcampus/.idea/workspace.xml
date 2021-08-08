@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f787cb53-6928-4bc1-81f2-222cd3e1d263" name="Default Changelist" comment="" />
+    <list default="true" id="f787cb53-6928-4bc1-81f2-222cd3e1d263" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/My Application/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/My Application/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/My Application/app/src/main/java/com/example/myapplication/MasterApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/My Application/app/src/main/java/com/example/myapplication/MasterApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/My Application/app/src/main/java/com/example/myapplication/RetrofitActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/My Application/app/src/main/java/com/example/myapplication/RetrofitActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/My Application/app/src/main/java/com/example/myapplication/RetrofitService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/My Application/app/src/main/java/com/example/myapplication/RetrofitService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/My Application/app/src/main/java/com/example/myapplication/activity_email_signup.kt" beforeDir="false" afterPath="$PROJECT_DIR$/My Application/app/src/main/java/com/example/myapplication/activity_email_signup.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,7 +26,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Fast_Campus_Android-master" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="SvnConfiguration">
@@ -34,5 +41,11 @@
       <updated>1619963325213</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1628087836597">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1628087836597" />
   </component>
 </project>
