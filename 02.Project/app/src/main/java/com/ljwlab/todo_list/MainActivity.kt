@@ -22,8 +22,11 @@ import androidx.lifecycle.ViewModel
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.IdpResponse
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.DocumentSnapshot
+import com.google.firebase.firestore.QueryDocumentSnapshot
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.google.firestore.v1.Value
 
 class MainActivity : AppCompatActivity() {
 
@@ -162,9 +165,9 @@ data class Todo(
         var isDone : Boolean = false
 )
 
-    class TodoAdapter(private var dataSet: List<Todo>,
-                      val onClickDeleteIcon : (todo : Todo) -> Unit,
-                      val onClickItem : (todo : Todo) -> Unit
+    class TodoAdapter(private var dataSet: List<DocumentSnapshot>,
+                      val onClickDeleteIcon : (todo : DocumentSnapshot) -> Unit,
+                      val onClickItem : (todo : DocumentSnapshot) -> Unit
     ) : RecyclerView.Adapter<TodoAdapter.TodoViewHolder>() {
 
         /**
@@ -188,9 +191,9 @@ data class Todo(
 
         override fun onBindViewHolder(viewHolder: TodoViewHolder, position: Int) {
             val todo = dataSet[position]
-            viewHolder.binding.todoText.text = todo.text
+            viewHolder.binding.todoText.text = todo.getString("text") ?: ""
             //viewHolder.textView.text = dataSet[position].text
-            if(todo.isDone)
+            if((todo.getBoolean("isDone")?:false) == true)
             {
                 viewHolder.binding.todoText.apply {
                     paintFlags = paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
@@ -217,7 +220,7 @@ data class Todo(
 
         override fun getItemCount() = dataSet.size
 
-        fun setData(newData: List<Todo>)
+        fun setData(newData: List<DocumentSnapshot>)
         {
             dataSet = newData
             notifyDataSetChanged()
@@ -227,46 +230,71 @@ data class Todo(
 class MainViewModel : ViewModel()
 {
     val db = Firebase.firestore
-    val todoLiveData = MutableLiveData<List<Todo>>()
-    private val data = arrayListOf<Todo>()
+    val todoLiveData = MutableLiveData<List<DocumentSnapshot>>()
 
     init {
         fetchData()
     }
     fun fetchData()
     {
-        db.collection("todos")
-            .get()
-            .addOnSuccessListener {result ->
-                data.clear()
-                for (document in result) {
-                    //Log.d(TAG, "${document.id} => ${document.data}")
-                    val todo = Todo(
-                        document.data["text"]as String,
-                        document.data["isDone"]as Boolean
-                    )
-                    data.add(todo)
-                }
-                todoLiveData.value =data
-            }
+        val user = FirebaseAuth.getInstance().currentUser
+        if(user != null)
+        {
+            db.collection(user.uid)
+                    .addSnapshotListener { value, e ->
+                        if (e != null) {
+                            return@addSnapshotListener
+                        }
+                        if(value != null)
+                        {
+                            todoLiveData.value = value.documents
+                        }
+
+                    }
+//                    .get()
+//                    .addOnSuccessListener {result ->
+//                        data.clear()
+//                        for (document in result) {
+//                            //Log.d(TAG, "${document.id} => ${document.data}")
+//                            val todo = Todo(
+//                                    document.data["text"]as String,
+//                                    document.data["isDone"]as Boolean
+//                            )
+//                            data.add(todo)
+//                        }
+//                        todoLiveData.value =data
+//                    }
+        }
+
     }
 
-    fun toggleTodo(todo:Todo)
+    fun toggleTodo(todo:DocumentSnapshot)
     {
-        todo.isDone = !todo.isDone
-        todoLiveData.value = data
+        FirebaseAuth.getInstance().currentUser?.let { user->
+            val isDone = todo.getBoolean("isDone") ?: false
+            db.collection(user.uid).document(todo.id).update("isDone", !isDone)
+        }
+        //todo.isDone = !todo.isDone
+        //todoLiveData.value = data
     }
 
     fun addTodo(todo: Todo)
     {
-        data.add(todo)
-        todoLiveData.value = data
+        FirebaseAuth.getInstance().currentUser?.let { user->
+            db.collection(user.uid).add(todo)
+        }
+
+//        data.add(todo)
+//        todoLiveData.value = data
     }
 
-    fun DeleteTodo(todo: Todo)
+    fun DeleteTodo(todo: DocumentSnapshot)
     {
-        data.remove(todo)
-        todoLiveData.value = data
+        FirebaseAuth.getInstance().currentUser?.let { user->
+            db.collection(user.uid).document(todo.id).delete()
+        }
+        //data.remove(todo)
+        //todoLiveData.value = data
     }
 
 }
