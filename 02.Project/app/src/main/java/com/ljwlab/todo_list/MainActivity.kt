@@ -1,12 +1,13 @@
 package com.ljwlab.todo_list
 
+import android.app.Activity
+import android.content.Intent
 import android.graphics.Paint
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.util.Log
+import android.view.*
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -18,8 +19,16 @@ import androidx.activity.viewModels
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
+import com.firebase.ui.auth.AuthUI
+import com.firebase.ui.auth.IdpResponse
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
+
+    val RC_SIGN_IN = 1000
+
     private lateinit var binding: ActivityMainBinding
     private val viewModel : MainViewModel by viewModels()
 
@@ -30,6 +39,10 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+        // 로그인이 안됨
+        if(FirebaseAuth.getInstance().currentUser == null) {
+            login()
+        }
         //data.add(Todo("숙제"))
         //data.add(Todo("청소", true))
 
@@ -39,7 +52,7 @@ class MainActivity : AppCompatActivity() {
             layoutManager = LinearLayoutManager(this@MainActivity)
             adapter = TodoAdapter(
                     emptyList(),
-                    //viewModel.data,
+                    //viewModel.data,ㅇ
                     onClickDeleteIcon = {
                         viewModel.DeleteTodo(it)
                         //binding.recyclerView.adapter?.notifyDataSetChanged()
@@ -68,7 +81,62 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-//    private  fun toggleTodo(todo:Todo)
+    override fun onActivityResult(requestCode : Int, resultCode : Int, data : Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == RC_SIGN_IN) {
+            val response = IdpResponse.fromResultIntent(data)
+            if (requestCode == Activity.RESULT_OK) // 로그인  성공
+            {
+                //val user = FirebaseAuth.getInstance().currentUser
+                viewModel.fetchData()
+            } else // 로그인 실패
+            {
+                finish()
+            }
+        }
+    }
+
+    fun login()
+    {
+        val providers = arrayListOf(AuthUI.IdpConfig.EmailBuilder().build())
+
+        startActivityForResult(
+            AuthUI.getInstance()
+                .createSignInIntentBuilder()
+                .setAvailableProviders(providers)
+                .build(),
+            RC_SIGN_IN)
+    }
+
+    fun logout()
+    {
+        AuthUI.getInstance()
+            .signOut(this)
+            .addOnCompleteListener {
+                login()// ...
+            }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater : MenuInflater = menuInflater
+        inflater.inflate(R.menu.main, menu)
+        return true
+        //return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId)
+        {
+            R.id.action_log_out ->
+            {
+                logout()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    //    private  fun toggleTodo(todo:Todo)
 //    {
 //        todo.isDone = !todo.isDone
 //        binding.recyclerView.adapter?.notifyDataSetChanged()
@@ -158,8 +226,30 @@ data class Todo(
 
 class MainViewModel : ViewModel()
 {
+    val db = Firebase.firestore
     val todoLiveData = MutableLiveData<List<Todo>>()
     private val data = arrayListOf<Todo>()
+
+    init {
+        fetchData()
+    }
+    fun fetchData()
+    {
+        db.collection("todos")
+            .get()
+            .addOnSuccessListener {result ->
+                data.clear()
+                for (document in result) {
+                    //Log.d(TAG, "${document.id} => ${document.data}")
+                    val todo = Todo(
+                        document.data["text"]as String,
+                        document.data["isDone"]as Boolean
+                    )
+                    data.add(todo)
+                }
+                todoLiveData.value =data
+            }
+    }
 
     fun toggleTodo(todo:Todo)
     {
