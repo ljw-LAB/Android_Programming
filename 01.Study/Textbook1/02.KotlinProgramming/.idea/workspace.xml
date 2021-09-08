@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1487066d-32d8-4d4f-bd1e-a5f50b6897a7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../01.HelloKotlin/01.HelloKotlin.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01.HelloKotlin/src/HelloKotlin.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../01.HelloKotlin/src/MainArgs.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/02.KotlinProgramming.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MinMax.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/StringExpression.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/StringTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chap02/section1/ValVar.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chap02/section1/defaultPackage.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/example/ljwlab/Person.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../01.HelloKotlin/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/androidTest/java/org/techtown/hellokotlin/ExampleInstrumentedTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/java/HelloKotlin.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/res/values-night/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/res/values/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/test/java/org/techtown/hellokotlin/ExampleUnitTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/settings.gradle" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1xdCuqanmPRVS9ww5oQCXHK6Xrp" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RunManager" selected="Kotlin.StringExpressionKt">
+    <configuration name="DefaultPackageKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="chap02.section1.DefaultPackageKt" />
+      <module name="02.KotlinProgramming" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MinMaxKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="chap02.section2.MinMaxKt" />
+      <module name="02.KotlinProgramming" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StringExpressionKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="chap02.section2.StringExpressionKt" />
+      <module name="02.KotlinProgramming" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StringTestKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="chap02.section2.StringTestKt" />
+      <module name="02.KotlinProgramming" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ValVarKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="chap02.section1.ValVarKt" />
+      <module name="02.KotlinProgramming" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Kotlin.StringExpressionKt" />
+        <item itemvalue="Kotlin.StringTestKt" />
+        <item itemvalue="Kotlin.MinMaxKt" />
+        <item itemvalue="Kotlin.ValVarKt" />
+        <item itemvalue="Kotlin.DefaultPackageKt" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1487066d-32d8-4d4f-bd1e-a5f50b6897a7" name="Changes" comment="" />
+      <created>1630675805331</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1630675805331</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>
