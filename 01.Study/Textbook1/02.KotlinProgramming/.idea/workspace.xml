@@ -2,59 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1487066d-32d8-4d4f-bd1e-a5f50b6897a7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../01.HelloKotlin/01.HelloKotlin.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../01.HelloKotlin/src/HelloKotlin.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../01.HelloKotlin/src/MainArgs.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/02.KotlinProgramming.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MinMax.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/StringExpression.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/StringTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/chap02/section1/ValVar.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/chap02/section1/defaultPackage.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/ljwlab/Person.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../01.HelloKotlin/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/androidTest/java/org/techtown/hellokotlin/ExampleInstrumentedTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/java/HelloKotlin.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/res/values-night/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/res/values/colors.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/res/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/main/res/values/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/app/src/test/java/org/techtown/hellokotlin/ExampleUnitTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01.HelloKotlin/settings.gradle" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AnyArgTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AnyCasting.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BitsShift.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IncDecOperator.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UshrEx.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/02.KotlinProgramming/META-INF/02.KotlinProgramming.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/02.KotlinProgramming/META-INF/02.KotlinProgramming.kotlin_module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/isCheck.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/isCheck.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,37 +38,37 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
-  <component name="RunManager" selected="Kotlin.StringExpressionKt">
-    <configuration name="DefaultPackageKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="chap02.section1.DefaultPackageKt" />
+  <component name="RunManager" selected="Kotlin.BitsShiftKt">
+    <configuration name="AnyArgTestKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="chap02.section2.AnyArgTestKt" />
       <module name="02.KotlinProgramming" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MinMaxKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="chap02.section2.MinMaxKt" />
+    <configuration name="AnyCastingKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="chap02.section2.AnyCastingKt" />
       <module name="02.KotlinProgramming" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StringExpressionKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="chap02.section2.StringExpressionKt" />
+    <configuration name="BitsShiftKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="chap02.section2.BitsShiftKt" />
       <module name="02.KotlinProgramming" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StringTestKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="chap02.section2.StringTestKt" />
+    <configuration name="IncDecOperatorKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="chap02.section2.IncDecOperatorKt" />
       <module name="02.KotlinProgramming" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ValVarKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="chap02.section1.ValVarKt" />
+    <configuration name="IsCheckKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="chap02.section2.IsCheckKt" />
       <module name="02.KotlinProgramming" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -121,11 +76,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.StringExpressionKt" />
-        <item itemvalue="Kotlin.StringTestKt" />
-        <item itemvalue="Kotlin.MinMaxKt" />
-        <item itemvalue="Kotlin.ValVarKt" />
-        <item itemvalue="Kotlin.DefaultPackageKt" />
+        <item itemvalue="Kotlin.BitsShiftKt" />
+        <item itemvalue="Kotlin.IncDecOperatorKt" />
+        <item itemvalue="Kotlin.AnyArgTestKt" />
+        <item itemvalue="Kotlin.AnyCastingKt" />
+        <item itemvalue="Kotlin.IsCheckKt" />
       </list>
     </recent_temporary>
   </component>
