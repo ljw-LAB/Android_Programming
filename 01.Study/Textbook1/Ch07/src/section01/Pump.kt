@@ -1,4 +1,4 @@
-package section01
+package section01.coffeeMaker
 
 interface Pump {
     fun pump()

@@ -1,4 +1,4 @@
-package section01
+package section01.coffeeMaker
 
 import section01.coffeeMaker.MyDripCoffeeModule
 import section01.coffeeMaker.Thermosiphon

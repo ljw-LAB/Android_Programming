@@ -1,6 +1,4 @@
-package section01
-
-import section01.coffeeMaker.Heater
+package section01.coffeeMaker
 
 class EletricHeater (var heating: Boolean = false) : Heater {
 
