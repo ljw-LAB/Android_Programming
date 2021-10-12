@@ -1,4 +1,4 @@
-package section2
+package section02
 
 class Outer{
     val ov = 5
