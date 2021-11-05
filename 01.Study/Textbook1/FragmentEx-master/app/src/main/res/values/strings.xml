@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">FragmentEx</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment1">Fragment One</string>
+    <string name="hello_blank_fragment2">Fragment Two</string>
+    <string name="subactivity">SubActivity</string>
+</resources>
