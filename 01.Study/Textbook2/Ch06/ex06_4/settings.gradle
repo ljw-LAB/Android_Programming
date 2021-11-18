@@ -1,0 +1,3 @@
+include ':ch6_view'
+include ':app'
+rootProject.name = "ex06_4"
