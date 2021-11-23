@@ -1,14 +1,11 @@
-package com.example.ex07_2
+package com.example.ex07_6
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
 class MainActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
-
-
 }
