@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.ex14_03">
+    package="com.example.ex15_05">
 
     <application
         android:allowBackup="true"
@@ -8,11 +8,24 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Ex14_03">
-        <receiver
-            android:name=".MyReceiver"
+        android:theme="@style/Theme.Ex15_05">
+        <service
+            android:name=".MyAIDLService"
             android:enabled="true"
-            android:exported="true"></receiver>
+            android:exported="true">
+            <intent-filter>
+                <action android:name="ACTION_SERVICE_AIDL" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".MyMessengerService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="ACTION_SERVICE_Messenger" />
+            </intent-filter>
+        </service>
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,4 +34,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>

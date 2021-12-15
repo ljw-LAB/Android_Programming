@@ -1,0 +1,3 @@
+include ':app:ex15_01_01'
+include ':app'
+rootProject.name = "ex15_05"
