@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory
+        android:key="a"
+        android:summary="A Setting summary"
+        android:title="A Setting"
+        app:fragment="com.example.ex17_03.ASettingsFragment"/>
+    <PreferenceCategory
+        android:key="b"
+        android:summary="B Setting summary"
+        android:title="B Setting"
+        app:fragment="com.example.ex17_03.BSettingsFragment"/>
+</PreferenceScreen>
