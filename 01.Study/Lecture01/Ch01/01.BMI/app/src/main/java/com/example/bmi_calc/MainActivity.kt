@@ -7,7 +7,6 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import kotlin.math.log
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,9 +30,13 @@ class MainActivity : AppCompatActivity() {
             // 이 아래로는 절대 빈 값이 올2222 수 없음.
 
             val height : Int = heightEditText.text.toString().toInt()
-            val weight : Int = weightEditText?.text.toString().toInt()
+            val weight : Int = weightEditText.text.toString().toInt()
 
             val intent = Intent(this, ResultActivity::class.java)
+
+            intent.putExtra("height", height)
+            intent.putExtra("weight", weight)
+
             startActivity(intent)
 
             Log.d("MainActivity", "height $height, weight $weight") // .d, .i 로그 수준을 얘기함 Verbose, Debug
