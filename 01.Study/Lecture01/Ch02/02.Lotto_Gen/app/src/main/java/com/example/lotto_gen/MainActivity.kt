@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.NumberPicker
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import java.util.*
 
@@ -52,6 +53,7 @@ class MainActivity : AppCompatActivity() {
 
         initRunButton()
         initAddButton()
+        initClearButton()
 
     }
 
@@ -66,6 +68,8 @@ class MainActivity : AppCompatActivity() {
 
                 textView.text = number.toString()
                 textView.isVisible = true
+
+                setNumberBackground(number, textView)
             }
             Log.d("MainActivity", list.toString())
         }
@@ -96,9 +100,30 @@ class MainActivity : AppCompatActivity() {
             textView.isVisible = true
             textView.text = numberPicker.value.toString()
 
+//            when(numberPicker.value){
+//                in 1..10 -> textView.background = ContextCompat.getDrawable(this, R.drawable.circle_yello)
+//                in 11..20 -> textView.background = ContextCompat.getDrawable(this, R.drawable.circle_blue)
+//                in 21..30 -> textView.background = ContextCompat.getDrawable(this, R.drawable.circle_red)
+//                in 31..40 -> textView.background = ContextCompat.getDrawable(this, R.drawable.circle_gray)
+//                else -> textView.background = ContextCompat.getDrawable(this, R.drawable.circle_green)
+//
+//            }
+            setNumberBackground(numberPicker.value, textView)
             picNumberSet.add(numberPicker.value)
 
             Log.d("MainActivity", list.toString())
+        }
+    }
+
+    private fun setNumberBackground(number: Int, textView: TextView)
+    {
+        when(number){
+            in 1..10 -> textView.background = ContextCompat.getDrawable(this, R.drawable.circle_yello)
+            in 11..20 -> textView.background = ContextCompat.getDrawable(this, R.drawable.circle_blue)
+            in 21..30 -> textView.background = ContextCompat.getDrawable(this, R.drawable.circle_red)
+            in 31..40 -> textView.background = ContextCompat.getDrawable(this, R.drawable.circle_gray)
+            else -> textView.background = ContextCompat.getDrawable(this, R.drawable.circle_green)
+
         }
     }
 
@@ -124,7 +149,8 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
         numberList.shuffle()
-        val newList = picNumberSet.toList().subList(0, 6 - picNumberSet.size)
+//        val newList = picNumberSet.toList().subList(0, 6 - picNumberSet.size)
+        val newList = picNumberSet.toList() + numberList.subList(0, 6 - picNumberSet.size)
         return newList.sorted()
     }
 }
