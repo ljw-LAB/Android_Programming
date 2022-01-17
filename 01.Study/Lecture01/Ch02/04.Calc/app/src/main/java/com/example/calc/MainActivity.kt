@@ -6,10 +6,15 @@ import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableStringBuilder
 import android.text.style.ForegroundColorSpan
+import android.view.LayoutInflater
 import android.view.View
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.core.view.isVisible
+import androidx.room.Room
+import com.example.calc.model.History
 import java.lang.NumberFormatException
 
 class MainActivity : AppCompatActivity() {
@@ -19,8 +24,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     private val resultTextView : TextView by lazy{
-        findViewById<TextView>(R.id.resultButton)
+        findViewById<TextView>(R.id.resultTextView)
     }
+
+    private val historyLayout : View by lazy {
+        findViewById<View>(R.id.historyLayout)
+    }
+
+    private val historyLinearLayout : LinearLayout by lazy {
+        findViewById<LinearLayout>(R.id.historyLinearLayout)
+    }
+
+    lateinit var db : AppDatabase
+
 
     private var isOperator = false
     private var hasOperator = false
@@ -28,20 +44,27 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        db = Room.databaseBuilder(
+                applicationContext,
+                AppDatabase::class.java,
+                "histroyDB"
+        ).build()
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
     fun buttonClicked(v: View){
         when(v.id){
-            R.id.oneButton -> numberButtonClicked("0")
-            R.id.twoButton -> numberButtonClicked("1")
-            R.id.threeButton -> numberButtonClicked("2")
-            R.id.fourButton -> numberButtonClicked("3")
-            R.id.fiveButton -> numberButtonClicked("4")
-            R.id.sixButton -> numberButtonClicked("5")
-            R.id.sevenButton -> numberButtonClicked("6")
-            R.id.eightButton -> numberButtonClicked("7")
-            R.id.nineButton -> numberButtonClicked("8")
-            R.id.zeroButton -> numberButtonClicked("9")
+            R.id.oneButton -> numberButtonClicked("1")
+            R.id.twoButton -> numberButtonClicked("2")
+            R.id.threeButton -> numberButtonClicked("3")
+            R.id.fourButton -> numberButtonClicked("4")
+            R.id.fiveButton -> numberButtonClicked("5")
+            R.id.sixButton -> numberButtonClicked("6")
+            R.id.sevenButton -> numberButtonClicked("7")
+            R.id.eightButton -> numberButtonClicked("8")
+            R.id.nineButton -> numberButtonClicked("9")
+            R.id.zeroButton -> numberButtonClicked("0")
             R.id.plusButton ->  operatorButtonClicked("+")
             R.id.minusButton -> operatorButtonClicked("-")
             R.id.multiButton -> operatorButtonClicked("x")
@@ -59,7 +82,7 @@ class MainActivity : AppCompatActivity() {
 
         isOperator = false
 
-        val expressionText =  expressionTextView.text.split("")
+        val expressionText =  expressionTextView.text.split(" ")
 
         if(expressionText.isNotEmpty() && expressionText.last().length >= 15){
             Toast.makeText(this, "15자리 까지만 사용할 수 있습니다.", Toast.LENGTH_SHORT).show()
@@ -122,7 +145,7 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
-        if(!expressionTexts[0].isNumber().not() || expressionTexts[2].isNumber().not() )
+        if(expressionTexts[0].isNumber().not() || expressionTexts[2].isNumber().not() )
         {
             Toast.makeText(this, "오류가 발생했습니다.", Toast.LENGTH_SHORT).show()
             return
@@ -130,6 +153,11 @@ class MainActivity : AppCompatActivity() {
 
         val expressionText = expressionTextView.text.toString()
         val resultText = calculateExpression()
+
+        // todo 디비에 넣어주는 부분
+        Thread(Runnable {
+            db.historyDao().insertHistory(History(null, expressionText, resultText))
+        }).start()
 
         resultTextView.text = ""
         expressionTextView.text = resultText
@@ -145,7 +173,7 @@ class MainActivity : AppCompatActivity() {
         {
             return ""
         }
-        else if(!expressionText[0].isNumber().not() || expressionText[2].isNumber().not() )
+        else if(expressionText[0].isNumber().not() || expressionText[2].isNumber().not() )
         {
             return ""
         }
@@ -158,7 +186,7 @@ class MainActivity : AppCompatActivity() {
             "+" -> (exp1 + exp2).toString()
             "-" -> (exp1 - exp2).toString()
             "x" -> (exp1 * exp2).toString()
-            "/" -> (exp1 / exp2).toString()
+            "÷" -> (exp1 / exp2).toString()
             "%" -> (exp1 % exp2).toString()
             else -> ""
         }
@@ -172,9 +200,40 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun historyButtonClicked(v: View){
+        historyLayout.isVisible = true
+        historyLinearLayout.removeAllViews()
 
+        Thread(Runnable {
+            db.historyDao().getAll().reversed().forEach {
+
+                runOnUiThread{
+                    val historyView = LayoutInflater.from(this).inflate(R.layout.history_row, null, false)
+                    historyView.findViewById<TextView>(R.id.expressionTextView).text = it.expression
+                    historyView.findViewById<TextView>(R.id.resultTextView).text = "= ${it.result}"
+
+                    historyLinearLayout.addView(historyView)
+                }
+            }
+        }).start()
+
+        //TODO 디비에서 모든 기록 가져오기
+        //TODO 뷰에 모든 기록 할당하기
     }
 
+    fun closetHistoryButtonClicked(v: View){
+        historyLayout.isVisible = false
+    }
+
+    fun historyClearButtonClicked(v: View){
+        historyLinearLayout.removeAllViews()
+
+        Thread(Runnable {
+            db.historyDao().deleteAll()
+        }).start()
+
+        //TODO 디비에서 모든 기록 삭제
+        //TODO 뷰에서 모든 기록 삭제
+    }
 }
 
 fun String.isNumber() : Boolean{
